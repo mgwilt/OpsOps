@@ -1,0 +1,22 @@
+@page "/azdo"
+
+@using OpsOps.Models;
+@inject OpsOps.Data.AzurePipelinesService azurePipelineService;
+
+<RadzenHeading Text="Azure DevOps" Size="H1" />
+
+<RadzenStack>
+    <RadzenDropDown @bind-Value=@project Data="@projects" TextProperty="Name" ValueProperty="Id" Style="width: 100%;  max-width: 400px;" />
+</RadzenStack>
+
+@code
+{
+    private string project = "";
+    private IEnumerable<AzdoProject> projects;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        projects = await azurePipelineService.GetProjectsAsync();
+    }
+}

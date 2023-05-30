@@ -1,0 +1,24 @@
+﻿@inherits LayoutComponentBase
+
+<RadzenLayout>
+    <RadzenHeader>
+        <RadzenStack>
+            @* <RadzenButton Text="Login" Click="@(() => { })" /> *@
+        </RadzenStack>
+    </RadzenHeader>
+    <RadzenSidebar>
+        <NavMenu />
+    </RadzenSidebar>
+    <RadzenBody>
+        <div class="content">
+            @Body
+        </div>
+    </RadzenBody>
+    <RadzenFooter>
+        <div class="footer-text">OpsOps</div>
+    </RadzenFooter>
+</RadzenLayout>
+
+@code {
+    bool sidebar1Expanded = true;
+}

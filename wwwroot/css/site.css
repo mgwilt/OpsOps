@@ -1,0 +1,7 @@
+html, body {
+    font-family: var(--rz-text-font-family);
+    
+    /* no border, no margin */
+    margin: 0;
+    padding: 0;
+}
